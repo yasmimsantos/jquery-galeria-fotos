@@ -9,18 +9,21 @@ $(document).ready(function () {
 
   $('form').on('submit', function (e) {
     e.preventDefault()
-    const enderecoDaNovaImagem = $('#endereco-imagem-nova').val()
+    const nomeNovaTarefa = $('#nome-tarefa-nova').val()
     const novoItem = $('<li style="display: none"></li>')
-    $(`<img src ="${enderecoDaNovaImagem}" />`).appendTo(novoItem)
+    $(`<p>${nomeNovaTarefa}</p>`).appendTo(novoItem)
     $(`
-      <div class = "overlay-imagem-link">
-        <a href ="${enderecoDaNovaImagem}" target="_blank" tittle = "Ver imagem em tamanho real">
-          Ver imagem em tamanho real
-        </a>
+      <div class = "nova-tarefa">
+        <li ${nomeNovaTarefa}"
       </div>
       `).appendTo(novoItem)
     $(novoItem).appendTo('ul')
     $(novoItem).fadeIn(1000)
-    $('#endereco-imagem-nova').val('')
+
+    $('li').click(function () {
+      $(this).css('text-decoration', 'line-through')
+    })
+
+    $('#nome-tarefa-nova').val('')
   })
 })

@@ -50,38 +50,32 @@ button {
 }
 
 ul {
-    display: flex;
+    display:flexbox;
     flex-wrap: wrap;
+    padding: 32px;
 }
 
 ul li {
+    padding: 16px;
     max-width: 25%;
-    list-style: none;
-    position: relative;
+    position:relative;
     max-height: 280px;
     overflow-y: hidden;
 }
 
-ul li img {
-    width: 100%;
-}
 
-.overlay-imagem-link {
+.nova-tarefa {
     padding: 16px;
-    background-color: rgba(0, 0, 0, 0.7);
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
-    opacity: 0;
     transition: all ease .5s;
-}
-
-.overlay-imagem-link a {
-    color: #fff;
     text-decoration: none;
+    list-style:circle;
+    cursor: pointer
 }
 
-ul li:hover .overlay-imagem-link {
+ul li:hover .nova-tarefa {
     opacity: 1;
 }
